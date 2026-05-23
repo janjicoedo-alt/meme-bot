@@ -543,5 +543,8 @@ bot.onText(/\/auto$/, msg => {
   STATE.autoTrade = !STATE.autoTrade;
   bot.sendMessage(msg.chat.id,
     STATE.autoTrade
-      ? `🤖 *التداول التلقائي: مفعّل ✅*\nيشتري عند نقاط >= 70/100\nيبيع عند +${CFG.TAKE_PROFIT}% أو -${CFG.STOP_LOSS}%`
-      : "⏸ *التداول التلقائي: موقوف*\nتنبيه
+bot.sendMessage(msg.chat.id,
+      STATE.autoTrade
+        ? "التداول التلقائي: مفعل - يشتري عند 70 نقطة"
+        : "التداول التلقائي: موقوف - تنبيهات فقط",
+      { parse_mode: "Markdown" });
