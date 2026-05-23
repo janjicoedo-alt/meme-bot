@@ -522,4 +522,4 @@ bot.on("callback_query", async q => {
   const sym = parts[2] || "TOKEN";
 
   if (act === "B") {
-    bot.answerCallbackQuery(q.id, { text: "
+    bot.answerCallbackQuery(q.id, { text: "Buying..." });
