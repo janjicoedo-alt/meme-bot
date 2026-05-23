@@ -1,1 +1,15 @@
-bot_noai.js
+{
+  "name": "meme-bot",
+  "version": "1.0.0",
+  "main": "bot_noai.js",
+  "scripts": {
+    "start": "node bot_noai.js"
+  },
+  "dependencies": {
+    "@solana/web3.js": "^1.95.0",
+    "axios": "^1.7.0",
+    "bs58": "^5.0.0",
+    "dotenv": "^16.4.0",
+    "node-telegram-bot-api": "^0.66.0"
+  }
+}
