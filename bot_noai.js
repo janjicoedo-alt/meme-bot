@@ -535,16 +535,11 @@ bot.onText(/\/off$/, msg => {
   STATE.active = false;
   clearInterval(STATE.scanTimer);
   clearInterval(STATE.posTimer);
-  bot.sendMessage(msg.chat.id, "⏹ *البوت موقوف*", { parse_mode: "Markdown" });
-});
-
-bot.onText(/\/auto$/, msg => {
+  bot.sendMessage(msg.chat.id, "⏹ *البوت موقوف*", { parse_mode: "Markdown" });bot.onText(/\/auto$/, msg => {
   if (!isAdmin(msg.chat.id)) return;
   STATE.autoTrade = !STATE.autoTrade;
-  bot.sendMessage(msg.chat.id,
-    STATE.autoTrade
-bot.sendMessage(msg.chat.id,
-      STATE.autoTrade
-        ? "التداول التلقائي: مفعل - يشتري عند 70 نقطة"
-        : "التداول التلقائي: موقوف - تنبيهات فقط",
-      { parse_mode: "Markdown" });
+  const txt = STATE.autoTrade
+    ? "التداول التلقائي مفعل - يشتري عند 70 نقطة"
+    : "التداول التلقائي موقوف - تنبيهات فقط";
+  bot.sendMessage(msg.chat.id, txt);
+});
